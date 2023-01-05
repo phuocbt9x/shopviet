@@ -7,12 +7,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Category</h1>
+                        <h1>Discount</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">Category</li>
+                            <li class="breadcrumb-item active">Discount</li>
                         </ol>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex flex-row-reverse">
-                                <a href="{{ route('category.create') }}" class="btn btn-sm btn-success">
+                                <a href="{{ route('discount.create') }}" class="btn btn-sm btn-success">
                                     <i class="fas fa-plus-square"></i>
                                     <span class="ml-1">Create new</span>
                                 </a>
@@ -38,7 +38,8 @@
                                         <tr>
                                             <th>Name</th>
                                             <th>Slug</th>
-                                            <th>Parent</th>
+                                            <th>Type</th>
+                                            <th>Value</th>
                                             <th>Status</th>
                                             <th style="width:15%">Action(s)</th>
                                         </tr>
@@ -72,8 +73,11 @@
                 name: 'slug'
             },
             {
-                data: 'parent',
-                name: 'parent'
+                data: 'type',
+                name: 'type'
+            }, {
+                data: 'value',
+                name: 'value'
             },
             {
                 data: 'status',
@@ -84,6 +88,6 @@
                 name: 'action'
             }
         ];
-        renderTable('{!! route('category.index') !!}', col)
+        renderTable('{!! route('discount.index') !!}', col)
     </script>
 @endpush

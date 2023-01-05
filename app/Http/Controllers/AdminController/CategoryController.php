@@ -32,7 +32,7 @@ class CategoryController extends Controller
                     $routeEdit = route('category.edit', $category->slug);
                     $routeDestroy = "'" . route('category.destroy', $category->slug) . "'";
                     $buttonEdit = '<a href = "' . $routeEdit . '" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></a>';
-                    $buttonDestroy = '<a href = "javascript:void(0)" class="btn btn-sm btn-danger" onclick="deleteItem(' . $routeDestroy . ')"><i class="fas fa-trash"></i></a>';
+                    $buttonDestroy = '<a href = "javascript:void(0)" class="ml-2 btn btn-sm btn-danger" onclick="deleteItem(' . $routeDestroy . ')"><i class="fas fa-trash"></i></a>';
                     return $buttonEdit . $buttonDestroy;
                 })
                 ->rawColumns(['parent', 'status', 'action'])

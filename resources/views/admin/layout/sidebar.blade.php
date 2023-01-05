@@ -54,7 +54,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index3.html" class="nav-link">
+                            <a href="{{ route('discount.index') }}" class="nav-link">
                                 <i class="fas fa-plus-circle nav-icon"></i>
                                 <p>Giảm giá</p>
                             </a>
