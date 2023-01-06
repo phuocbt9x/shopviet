@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AdminController\CategoryController;
 use App\Http\Controllers\AdminController\DiscountController;
+use App\Http\Controllers\AdminController\OptionController;
+use App\Http\Controllers\AdminController\ValueController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,5 +43,24 @@ Route::prefix('admin')->group(function () {
         Route::get('edit/{discountModel}', 'edit')->name('edit');
         Route::patch('update/{discountModel}', 'update')->name('update');
         Route::delete('destroy/{discountModel}', 'destroy')->name('destroy');
+    });
+
+    //Option 
+    Route::group(['controller' => OptionController::class, 'as' => 'option.', 'prefix' => 'option'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('create', 'create')->name('create');
+        Route::post('store', 'store')->name('store');
+        Route::get('edit/{optionModel}', 'edit')->name('edit');
+        Route::patch('update/{optionModel}', 'update')->name('update');
+        Route::delete('destroy/{optionModel}', 'destroy')->name('destroy');
+    });
+    //Value 
+    Route::group(['controller' => ValueController::class, 'as' => 'value.', 'prefix' => '{optionModel?}/value'], function () {
+        Route::get('/', 'index')->name('index');
+        Route::get('create', 'create')->name('create');
+        Route::post('store', 'store')->name('store');
+        Route::get('edit/{valueModel}', 'edit')->name('edit');
+        Route::patch('update/{valueModel}', 'update')->name('update');
+        Route::delete('destroy/{valueModel}', 'destroy')->name('destroy');
     });
 });

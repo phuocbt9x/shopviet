@@ -15,7 +15,7 @@ class CreateOptionValuesTable extends Migration
     {
         Schema::create('option_values', function (Blueprint $table) {
             $table->id();
-            $table->string('value')->unique();
+            $table->string('value');
             $table->string('slug');
             $table->foreignId('option_id')->constrained('options');
             $table->boolean('activated');
