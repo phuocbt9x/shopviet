@@ -22,7 +22,7 @@ class CreateCouponsTable extends Migration
             $table->unsignedInteger('type');
             $table->unsignedBigInteger('value');
             $table->timestamp('time_start');
-            $table->timestamp('times_end');
+            $table->timestamp('time_end');
             $table->boolean('activated');
             $table->timestamps();
         });
