@@ -21,19 +21,21 @@
        with font-awesome or any other icon font library -->
                 <li class="nav-header">Menu</li>
                 <li class="nav-item">
-                    <a href="pages/calendar.html" class="nav-link">
+                    <a href="pages/calendar.html" class="nav-link {{ $title == 'Dashboard' ? 'active' : '' }}">
                         <i class="fas fa-home nav-icon"></i>
                         <p>Trang chủ</p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('category.index') }}" class="nav-link">
+                    <a href="{{ route('category.index') }}" class="nav-link {{ $title == 'Category' ? 'active' : '' }}">
                         <i class="fas fa-list-alt nav-icon"></i>
                         <p>Danh mục</p>
                     </a>
                 </li>
-                <li class="nav-item menu-open">
-                    <a href="#" class="nav-link active">
+                <li
+                    class="nav-item {{ $title == 'Product' || $title == 'Option' || $title == 'Value' || $title == 'Discount' ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ $title == 'Product' || $title == 'Option' || $title == 'Value' || $title == 'Discount' ? 'active' : '' }}">
                         <i class="fas fa-box nav-icon"></i>
                         <p>
                             Sản phẩm
@@ -42,19 +44,21 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link active">
+                            <a href="./index.html" class="nav-link {{ $title == 'Product' ? 'active' : '' }}">
                                 <i class="fas fa-plus-circle nav-icon"></i>
                                 <p>Tạo mới</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('option.index') }}" class="nav-link">
+                            <a href="{{ route('option.index') }}"
+                                class="nav-link {{ $title == 'Option' || $title == 'Value' ? 'active' : '' }}">
                                 <i class="fas fa-plus-circle nav-icon"></i>
                                 <p>Thuộc tính</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('discount.index') }}" class="nav-link">
+                            <a href="{{ route('discount.index') }}"
+                                class="nav-link {{ $title == 'Discount' ? 'active' : '' }}">
                                 <i class="fas fa-plus-circle nav-icon"></i>
                                 <p>Giảm giá</p>
                             </a>

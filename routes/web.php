@@ -22,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('admin')->group(function () {
+Route::prefix(env('PREFIX_ADMIN ', 'admin'))->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('dashboard');
